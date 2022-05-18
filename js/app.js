@@ -151,16 +151,19 @@ const showPosts = (posts) => {
 };
 
 const displayLikedPosts = () => {
+  const likedContainer = document.getElementById("liked");
+  likedContainer.innerHTML = "";
+
   const likedPosts = getLikedPosts();
   likedPosts.forEach((post) => {
     const div = createPost(post);
-    document.getElementById("liked").appendChild(div);
+    likedContainer.appendChild(div);
   });
 };
 
 const displayReportedPosts = () => {
   const reportContainer = document.getElementById("reported");
-  reportContainer.textContent = "";
+  reportContainer.innerHTML = "";
 
   const reportedPosts = getReportedPosts();
   reportedPosts.forEach((post) => {
